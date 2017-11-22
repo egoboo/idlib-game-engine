@@ -1,0 +1,7 @@
+[submodule "external/googletest"]
+	path = external/googletest
+	url = https://github.com/google/googletest.git
+[submodule "idlib"]
+	path = idlib
+	url = https://github.com/primordialmachine/idlib.git
+	branch = develop
