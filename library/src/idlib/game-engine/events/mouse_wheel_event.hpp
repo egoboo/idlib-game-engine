@@ -1,36 +1,37 @@
 // Copyright Michael Heilmann 2016, 2017.
 //
-// This file is part of Idlib.
+// This file is part of Idlib: Game Engine.
 //
-// Idlib is free software: you can redistribute it and/or modify it
+// Idlib: Game Engine is free software: you can redistribute it and/or modify it
 // under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Idlib is distributed in the hope that it will be useful, but
+// Idlib: Game Engine is distributed in the hope that it will be useful, but
 // WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 // General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Idlib. If not, see <http://www.gnu.org/licenses/>.
+// along with Idlib: Game Engine. If not, see <http://www.gnu.org/licenses/>.
 
-/// @file idlib/events/mouse_wheel_turned_event_args.hpp
-/// @brief Arguments of a mouse wheel event.
+/// @file idlib/game-engine/events/mouse_wheel_turned_event_args.hpp
+/// @brief Mouse wheel events.
 /// @author Michael Heilmann
 
 #pragma once
 
-#include "idlib/events/common.hpp"
-#include "idlib/events/event.hpp"
-#include "idlib/events/mouse_wheel_event_kind.hpp"
+#include "idlib/game-engine/common.hpp"
+#include "idlib/game-engine/events/event.hpp"
+#include "idlib/game-engine/events/mouse_wheel_event_kind.hpp"
 
-#include "idlib/events/internal/header.in"
+#include "idlib/game-engine/events/internal/header.in"
 	
-/// @brief A mouse wheel event.
+/// @brief A generic mouse wheel event class.
+/// Specializations for all events defined in id::events::mouse_wheel_event_kind are provided.
 /// @tparam Kind the event kind
 template <mouse_wheel_event_kind Kind>
-class mouse_wheel_event final : public event
+struct mouse_wheel_event final : public event
 {
 public:
     /// @brief Construct this mouse wheel event with the specified values.
@@ -59,9 +60,9 @@ public:
 private:
     vector_2s m_delta;
 
-}; // class mouse_wheel_event
+}; // struct mouse_wheel_event
 
 /// @brief Mouse wheel event raised if a mouse wheel is turned.
 using mouse_wheel_turned_event = mouse_wheel_event<mouse_wheel_event_kind::turned>;
 
-#include "idlib/events/internal/footer.in"
+#include "idlib/game-engine/events/internal/footer.in"

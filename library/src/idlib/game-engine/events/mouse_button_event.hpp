@@ -1,35 +1,37 @@
 // Copyright Michael Heilmann 2016, 2017.
 //
-// This file is part of Idlib.
+// This file is part of Idlib: Game Engine.
 //
-// Idlib is free software: you can redistribute it and/or modify it
+// Idlib: Game Engine is free software: you can redistribute it and/or modify it
 // under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Idlib is distributed in the hope that it will be useful, but
+// Idlib: Game Engine is distributed in the hope that it will be useful, but
 // WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 // General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Idlib. If not, see <http://www.gnu.org/licenses/>.
+// along with Idlib: Game Engine. If not, see <http://www.gnu.org/licenses/>.
 
-/// @file idlib/events/mouse_button_event_args.hpp
-/// @brief Arguments of a mouse button event.
+/// @file idlib/game-engine/events/mouse_button_event_args.hpp
+/// @brief Mouse button events.
+/// @author Michael Heilmann
 
 #pragma once
 
-#include "idlib/events/common.hpp"
-#include "idlib/events/event.hpp"
-#include "idlib/events/mouse_button_event_kind.hpp"
+#include "idlib/game-engine/common.hpp"
+#include "idlib/game-engine/events/event.hpp"
+#include "idlib/game-engine/events/mouse_button_event_kind.hpp"
 
-#include "idlib/events/internal/header.in"
+#include "idlib/game-engine/events/internal/header.in"
 
-/// @brief The event arguments of a mouse button event.
+/// @brief A generic mouse button event class.
+/// Specializations for all events defined in id::events::mouse_button_event are provided.
 /// @tparam Kind the event kind
 template <mouse_button_event_kind Kind>
-class mouse_button_event final : public event
+struct mouse_button_event final : public event
 {
 public:
     /// @brief Construct these mouse button event arguments with the specified values.
@@ -53,7 +55,7 @@ public:
 
     /// @brief Set the mouse pointer position at the point in time where the event occurred.
     /// @param position the mouse pointer position
-    void set_position() const
+    void set_position(const point_2s& position)
     { m_position = position; }
 
     /// @brief Get the mouse button the event pertains to.
@@ -72,7 +74,7 @@ private:
     /// @brief The mouse button.
     int m_button; ///< @brief The mouse button the event pertains to.
 	
-}; // class mouse_button_event
+}; // struct mouse_button_event
 
 /// @brief Arguments of a mouse button event raised if a mouse button was clicked (pressed and released).
 using mouse_button_clicked_event = mouse_button_event<mouse_button_event_kind::clicked>;
@@ -83,4 +85,4 @@ using mouse_button_pressed_event = mouse_button_event<mouse_button_event_kind::p
 /// @brief Arguments of a mouse button event raised if a mouse button was released.
 using mouse_button_released_event = mouse_button_event<mouse_button_event_kind::released>;
 
-#include "idlib/events/internal/footer.in"
+#include "idlib/game-engine/events/internal/footer.in"

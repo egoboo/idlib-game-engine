@@ -1,36 +1,37 @@
 // Copyright Michael Heilmann 2016, 2017.
 //
-// This file is part of Egoboo Engine.
+// This file is part of Idlib: Game Engine.
 //
-// Egoboo Engine is free software: you can redistribute it and/or modify it
+// Idlib: Game Engine is free software: you can redistribute it and/or modify it
 // under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Egoboo Engine is distributed in the hope that it will be useful, but
+// Idlib: Game Engine is distributed in the hope that it will be useful, but
 // WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 // General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Idlib. If not, see <http://www.gnu.org/licenses/>.
+// along with Idlib: Game Engine. If not, see <http://www.gnu.org/licenses/>.
 
-/// @file idlib/events/window_event.hpp
-/// @brief Arguments of a window event.
+/// @file idlib/game-engine/events/window_event.hpp
+/// @brief Window events.
 /// @author Michael Heilmann
 
 #pragma once
 
-#include "idlib/events/common.hpp"
-#include "idlib/events/event.hpp"
-#include "idlib/events/window_event_kind.hpp"
+#include "idlib/game-engine/common.hpp"
+#include "idlib/game-engine/events/event.hpp"
+#include "idlib/game-engine/events/window_event_kind.hpp"
 
-#include "idlib/events/internal/header.in"
+#include "idlib/game-engine/events/internal/header.in"
 
-/// @brief A window event.
+/// @brief A generic window event class.
+/// Specializations for all events defined in id::events::window_event_kind are provided.
 /// @tparam Kind the event kind
 template <window_event_kind Kind>
-class window_event final : public event
+struct window_event final : public event
 {
 public:
 	/// @brief Construct this window event.
@@ -45,7 +46,7 @@ public:
     window_event_kind get_kind() const
     { return Kind; }
 
-}; // class window_event
+}; // struct window_event
 
 /// @brief The arguments of a window event raised if a window was resized.
 using window_resized_event = window_event<window_event_kind::resized>;
@@ -56,4 +57,4 @@ using window_shown_event = window_event<window_event_kind::shown>;
 /// @brief The arguments of a window event raised if a window was hidden.
 using window_hidden_event = window_event<window_event_kind::hidden>;
 
-#include "idlib/events/internal/footer.in"
+#include "idlib/game-engine/events/internal/footer.in"

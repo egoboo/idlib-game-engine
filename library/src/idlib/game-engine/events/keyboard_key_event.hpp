@@ -1,33 +1,34 @@
 // Copyright Michael Heilmann 2016, 2017.
 //
-// This file is part of Idlib.
+// This file is part of Idlib: Game Engine.
 //
-// Idlib is free software: you can redistribute it and/or modify it
+// Idlib: Game Engine is free software: you can redistribute it and/or modify it
 // under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Idlib is distributed in the hope that it will be useful, but
+// Idlib: Game Engine is distributed in the hope that it will be useful, but
 // WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 // General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Idlib. If not, see <http://www.gnu.org/licenses/>.
+// along with Idlib: Game Engine. If not, see <http://www.gnu.org/licenses/>.
 
-/// @file idlib/events/keyboard_key_event_args.hpp
-/// @brief Arguments of a keyboard key event.
+/// @file idlib/game-engine/events/keyboard_key_event_args.hpp
+/// @brief Keyboard key events.
 /// @author Michael Heilmann
 
 #pragma once
 
-#include "idlib/events/common.hpp"
-#include "idlib/events/event.hpp"
-#include "idlib/events/keyboard_key_event_kind.hpp"
+#include "idlib/game-engine/common.hpp"
+#include "idlib/game-engine/events/event.hpp"
+#include "idlib/game-engine/events/keyboard_key_event_kind.hpp"
 
-#include "idlib/events/internal/header.in"
+#include "idlib/game-engine/events/internal/header.in"
 
-/// @brief The event arguments for a keyboard key event.
+/// @brief A generic keyboard key event class.
+/// Specializations for all events defined in id::events::keyboard_key_event_kind are provided.
 /// @tparam Kind the event kind
 template <keyboard_key_event_kind Kind>
 struct keyboard_key_event final : public event
@@ -59,7 +60,7 @@ public:
 private:
     int m_key;
 
-}; // class keyboard_key_event
+}; // struct keyboard_key_event
 
 /// @brief Arguments of a keyboard key event raised if a keyboard key was typed (pressed and released).
 using keyboard_key_typed_event = keyboard_key_event<keyboard_key_event_kind::typed>;
@@ -70,4 +71,4 @@ using keyboard_key_pressed_event = keyboard_key_event<keyboard_key_event_kind::p
 /// @brief Arguments of a keyboard key event raised if a keyboard key was released.
 using keyboard_key_released_event = keyboard_key_event<keyboard_key_event_kind::released>;
 
-#include "idlib/events/internal/footer.in"
+#include "idlib/game-engine/events/internal/footer.in"
