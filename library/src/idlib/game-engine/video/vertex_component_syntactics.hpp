@@ -15,18 +15,24 @@
 // You should have received a copy of the GNU General Public License
 // along with Idlib: Game Engine. If not, see <http://www.gnu.org/licenses/>.
 
-/// @file idlib/events/events.hpp
-/// @brief Idlib: Game Engine - events master include file.
+/// @file idlib/game-engine/vertex_component_syntactics.hpp
+/// @brief Syntactic forms of vertex components.
+/// @author Michael Heilmann
 
 #pragma once
 
-#include "idlib/game-engine/video/blend_function.hpp"
-#include "idlib/game-engine/video/culling_mode.hpp"
-#include "idlib/game-engine/video/index_format.hpp"
-#include "idlib/game-engine/video/index_syntactics.hpp"
-#include "idlib/game-engine/video/pixel_format.hpp"
-#include "idlib/game-engine/video/primitive_type.hpp"
-#include "idlib/game-engine/video/vertex_component_semantics.hpp"
-#include "idlib/game-engine/video/vertex_component_syntactics.hpp"
-#include "idlib/game-engine/video/vertex_format.hpp"
-#include "idlib/game-engine/video/winding_mode.hpp"
+namespace id {
+
+/// @brief An enum class of the syntactic forms of vertex components.
+enum class vertex_component_syntactics {
+	/// @brief One <tt>single</tt> value.
+	SINGLE_1,
+	/// @brief Two <tt>single</tt> values.
+	SINGLE_2,
+	/// @brief Three <tt>single</tt> values.
+	SINGLE_3,
+	/// @brief Four <tt>single</tt> values.
+	SINGLE_4,
+}; // enum class vertex_component_syntactics
+
+} // namespace id
