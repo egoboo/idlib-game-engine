@@ -15,16 +15,22 @@
 // You should have received a copy of the GNU General Public License
 // along with Idlib: Game Engine. If not, see <http://www.gnu.org/licenses/>.
 
-/// @file idlib/events/events.hpp
-/// @brief Idlib: Game Engine - events master include file.
+/// @file idlib/game-engine/index_syntactics.hpp
+/// @brief Syntactic forms of indices.
+/// @author Michael Heilmann
 
 #pragma once
 
-#include "idlib/game-engine/video/blend_function.hpp"
-#include "idlib/game-engine/video/culling_mode.hpp"
-#include "idlib/game-engine/video/index_format.hpp"
-#include "idlib/game-engine/video/index_syntactics.hpp"
-#include "idlib/game-engine/video/pixel_format.hpp"
-#include "idlib/game-engine/video/primitive_type.hpp"
-#include "idlib/game-engine/video/vertex_format.hpp"
-#include "idlib/game-engine/video/winding_mode.hpp"
+namespace id {
+
+/// @brief An enum class of the syntactic forms of indices.
+enum class index_syntactics {
+	/// @brief Unsigned 8-Bit indices.
+	NATURAL_8,
+	/// @brief Unsigned 16-Bit indices.
+	NATURAL_16,
+	/// @brief Unsigned 32-Bit indices.
+	NATURAL_32,
+}; // enum class index_syntactics
+	
+} // namespace id
