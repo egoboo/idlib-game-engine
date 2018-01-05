@@ -33,4 +33,4 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/buildsystem/set_project_default_properties.c
 
 # Add subdirectories for the library and the tests.
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/library)
-#add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/tests)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/tests)
