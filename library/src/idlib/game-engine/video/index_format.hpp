@@ -15,13 +15,24 @@
 // You should have received a copy of the GNU General Public License
 // along with Idlib: Game Engine. If not, see <http://www.gnu.org/licenses/>.
 
-/// @file idlib/events/events.hpp
-/// @brief Idlib: Game Engine - events master include file.
+/// @file idlib/game-engine/vertex_format.hpp
+/// @brief Enumeration of vertex formats.
+/// @author Michael Heilmann
 
 #pragma once
 
-#include "idlib/game-engine/video/blend_function.hpp"
-#include "idlib/game-engine/video/culling_mode.hpp"
-#include "idlib/game-engine/video/index_format.hpp"
-#include "idlib/game-engine/video/primitive_type.hpp"
-#include "idlib/game-engine/video/winding_mode.hpp"
+namespace id {
+	
+/// @brief Enumeration of canonical identifiers for index formats.
+enum class index_format {
+    /// @brief One unsigned 32 Bit value for the index component.
+    IU32,
+
+    /// @brief One unsigned 16 Bit value for the index component.
+    IU16,
+
+    /// @brief One unsigned 8 Bit value for the index component.
+    IU8,
+}; // enum class index_format
+	
+} // namespace id
