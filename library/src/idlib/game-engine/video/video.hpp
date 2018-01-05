@@ -23,5 +23,6 @@
 #include "idlib/game-engine/video/blend_function.hpp"
 #include "idlib/game-engine/video/culling_mode.hpp"
 #include "idlib/game-engine/video/index_format.hpp"
+#include "idlib/game-engine/video/pixel_format.hpp"
 #include "idlib/game-engine/video/primitive_type.hpp"
 #include "idlib/game-engine/video/winding_mode.hpp"
