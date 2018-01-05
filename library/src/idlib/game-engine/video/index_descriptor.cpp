@@ -15,19 +15,39 @@
 // You should have received a copy of the GNU General Public License
 // along with Idlib: Game Engine. If not, see <http://www.gnu.org/licenses/>.
 
-/// @file idlib/events/events.hpp
-/// @brief Idlib: Game Engine - events master include file.
+/// @file idlib/game-engine/video/index_descriptor.cpp
+/// @brief Descriptors of indices.
+/// @author Michael Heilmann
 
-#pragma once
-
-#include "idlib/game-engine/video/blend_function.hpp"
-#include "idlib/game-engine/video/culling_mode.hpp"
 #include "idlib/game-engine/video/index_descriptor.hpp"
-#include "idlib/game-engine/video/index_format.hpp"
-#include "idlib/game-engine/video/index_syntactics.hpp"
-#include "idlib/game-engine/video/pixel_format.hpp"
-#include "idlib/game-engine/video/primitive_type.hpp"
-#include "idlib/game-engine/video/vertex_component_semantics.hpp"
-#include "idlib/game-engine/video/vertex_component_syntactics.hpp"
-#include "idlib/game-engine/video/vertex_format.hpp"
-#include "idlib/game-engine/video/winding_mode.hpp"
+
+namespace id {
+
+index_descriptor::index_descriptor(index_syntactics syntactics)
+    : syntactics(syntactics)
+{}
+
+index_syntactics index_descriptor::get_syntactics() const
+{
+    return syntactics;
+}
+
+size_t index_descriptor::get_size() const
+{
+    switch (syntactics)
+    {
+    case index_syntactics::NATURAL_16:
+        return sizeof(uint16_t); // 16 / 8
+    case index_syntactics::NATURAL_32:
+        return sizeof(uint32_t); // 32 / 8
+    default:
+        throw unhandled_switch_case_error(__FILE__, __LINE__);
+    }
+}
+
+bool index_descriptor::equal_to(const index_descriptor& other) const noexcept
+{
+    return syntactics == other.syntactics;
+}
+
+} // namespace id
