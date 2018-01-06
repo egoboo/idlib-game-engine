@@ -31,5 +31,6 @@
 #include "idlib/game-engine/video/vertex_component_descriptor.hpp"
 #include "idlib/game-engine/video/vertex_component_semantics.hpp"
 #include "idlib/game-engine/video/vertex_component_syntactics.hpp"
+#include "idlib/game-engine/video/vertex_descriptor.hpp"
 #include "idlib/game-engine/video/vertex_format.hpp"
 #include "idlib/game-engine/video/winding_mode.hpp"
