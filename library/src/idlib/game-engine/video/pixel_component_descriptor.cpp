@@ -23,9 +23,12 @@
 
 namespace id {
 
-pixel_component_descriptor::pixel_component_descriptor(uint32_t mask, uint32_t shift)
-    : m_mask(mask), m_shift(shift)
+pixel_component_descriptor::pixel_component_descriptor(pixel_component_semantics semantics, uint32_t mask, uint32_t shift)
+    : m_semantics(semantics), m_mask(mask), m_shift(shift)
 {}
+
+pixel_component_semantics pixel_component_descriptor::get_semantics() const
+{ return m_semantics; }
 
 uint32_t pixel_component_descriptor::get_mask() const
 { return m_mask; }

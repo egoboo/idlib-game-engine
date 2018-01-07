@@ -21,6 +21,7 @@
 
 #pragma once
 
+#include "idlib/game-engine/video/pixel_component_semantics.hpp"
 #include "idlib/idlib.hpp"
 
 namespace id {
@@ -30,13 +31,18 @@ namespace id {
 /// the mask \f$M\f$ and the shift \f$S\f$ of a component \f$C_i\f$. The mask and
 /// the shift allow for getting the component value by \f$C_i = (P & M ) >> S\f$.
 /// The mask and the shift are given w.r.t. the host byte order.
-class pixel_component_descriptor
+class pixel_component_descriptor : public equal_to_expr<pixel_component_descriptor>
 {
 public:
     /// @brief Construct this pixel_component_descriptor object.
+    /// @param semantics the semantics of the pixel component
     /// @param mask the mask of the component Bits (w.r.t. the host Byte order)
     /// @param shift the shift of the component Bits (w.r.t. the host Byte order)
-    pixel_component_descriptor(uint32_t mask, uint32_t shift);
+    pixel_component_descriptor(pixel_component_semantics semantics, uint32_t mask, uint32_t shift);
+
+    /// @brief Get the semantics of the pixel component.
+    /// @return the semantics of the pixel component
+    pixel_component_semantics get_semantics() const;
 
     /// @brief Get the mask for the component Bits (w.r.t. the host Byte order).
     /// @return the mask of the component Bits (w.r.t. the host Byte order)
@@ -47,6 +53,9 @@ public:
     uint32_t get_shift() const;
 
 private:
+    /// @brief The semantics for the component.
+    pixel_component_semantics m_semantics;
+
     /// @brief The mask for the component Bits.
     uint32_t m_mask;
 
