@@ -1,6 +1,11 @@
-cmake_minimum_required (VERSION 2.8.7)
+cmake_minimum_required (VERSION 3.8)
 
 project(idlib-game-engine-tests CXX)
+
+# Idlib: Game Engine tests compiles against C++ 17.
+if (NOT MSVC)
+  set(CMAKE_CXX_STANDARD 17)
+endif()
 
 # Set the default properties.
 set_project_default_properties()
@@ -23,9 +28,8 @@ enable_testing()
 add_test(idlib-game-engine-tests ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/idlib-game-engine-tests-executable)
 if (NOT MSVC)
   add_custom_target(idlib-game-engine-check COMMAND ${CMAKE_CTEST_COMMAND} --verbose DEPENDS ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/idlib-game-engine-tests-executable)
-  if (TARGET check)
-    add_dependencies(check idlib-game-engine-check)
-  else()
-    add_custom_target(check idlib-game-engine-check)
+  if (NOT TARGET check)
+	add_custom_target(check)
   endif()
+  add_dependencies(check idlib-game-engine-check)
 endif()

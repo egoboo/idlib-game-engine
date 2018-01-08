@@ -20,7 +20,11 @@ elseif( CMAKE_SIZEOF_VOID_P EQUAL 4 )
     SET( EX_PLATFORM_NAME "x86" )
 endif( CMAKE_SIZEOF_VOID_P EQUAL 8 )
 
+# == Doxygen ==================================================================================== #
 
+# CMake 3.10 fails for no reason on FIND_PACKAGE(Doxygen).
+# Hence Doxygen support is disabled for now.
+#FIND_PACKAGE(Doxygen)
 
 # Macro adjusting (mostly compiler-specific) properties of a project.
 macro(set_project_default_properties)
@@ -78,13 +82,13 @@ macro(set_project_default_properties)
 endmacro(set_project_default_properties)
 
 # Adjust the archive output directory.
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/products/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/products/${EX_CONFIGURATION_NAME}/${EX_PLATFORM_NAME}/lib)
 
 # Adjust the library output directory.
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/products/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/products/${EX_CONFIGURATION_NAME}/${EX_PLATFORM_NAME}/lib)
 
 # Adjust the runtime output directory.
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/products/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/products/${EX_CONFIGURATION_NAME}/${EX_PLATFORM_NAME}/bin)
 
 # For multi-target generators like MSVC, we specifiy disjoint output paths for targets.
 foreach( OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES} )
