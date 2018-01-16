@@ -21,6 +21,7 @@
 #pragma once
 
 #include "idlib/game-engine/video/blend_function.hpp"
+#include "idlib/game-engine/video/compare_function.hpp"
 #include "idlib/game-engine/video/culling_mode.hpp"
 #include "idlib/game-engine/video/index_descriptor.hpp"
 #include "idlib/game-engine/video/index_format.hpp"
