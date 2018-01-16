@@ -32,6 +32,7 @@
 #include "idlib/game-engine/video/rasterization_mode.hpp"
 #include "idlib/game-engine/video/texture_address_mode.hpp"
 #include "idlib/game-engine/video/texture_filter.hpp"
+#include "idlib/game-engine/video/texture_sampler.hpp"
 #include "idlib/game-engine/video/vertex_component_descriptor.hpp"
 #include "idlib/game-engine/video/vertex_component_semantics.hpp"
 #include "idlib/game-engine/video/vertex_component_syntactics.hpp"
