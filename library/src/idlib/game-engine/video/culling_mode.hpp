@@ -50,7 +50,8 @@ namespace std {
 template <>
 struct hash<id::culling_mode>
 {
-	size_t operator()(id::culling_mode culling_mode) const;
+	size_t operator()(id::culling_mode culling_mode) const
+	{ return (size_t)culling_mode; }
 }; // hash 
 	
 } // namespace std
