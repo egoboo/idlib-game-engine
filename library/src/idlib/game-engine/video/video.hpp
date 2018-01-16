@@ -20,8 +20,9 @@
 
 #pragma once
 
-#include "idlib/game-engine/video/blend_function.hpp"
 #include "idlib/game-engine/video/compare_function.hpp"
+#include "idlib/game-engine/video/color_blend/color_blend_equation.hpp"
+#include "idlib/game-engine/video/color_blend/color_blend_parameter.hpp"
 #include "idlib/game-engine/video/color_depth/rgb_depth.hpp"
 #include "idlib/game-engine/video/color_depth/rgba_depth.hpp"
 #include "idlib/game-engine/video/culling_mode.hpp"
