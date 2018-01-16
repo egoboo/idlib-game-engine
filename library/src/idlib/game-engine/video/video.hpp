@@ -15,8 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Idlib: Game Engine. If not, see <http://www.gnu.org/licenses/>.
 
-/// @file idlib/events/events.hpp
-/// @brief Idlib: Game Engine - events master include file.
+/// @file idlib/game-engine/video/video.hpp
+/// @brief Idlib: Game Engine - video master include file.
 
 #pragma once
 
