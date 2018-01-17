@@ -33,7 +33,7 @@ matrix:
                      - gcc-6
                      - g++-6
                      # PhysFS
-                     #- libphysfs-dev
+                     - libphysfs-dev
                      # SDL 2
                      - libsdl2-dev
                      - libsdl2-image-dev
@@ -63,7 +63,7 @@ matrix:
                      - clang-4.0
                      - libc++-dev
                      # PhysFS
-                     #- libphysfs-dev
+                     - libphysfs-dev
                      # SDL 2
                      - libsdl2-dev
                      - libsdl2-image-dev
@@ -86,6 +86,7 @@ before_install:
    brew install sdl_image;
    brew install sdl_mixer;
    brew install sdl_ttf;
+   brew install physfs;
   fi
 
 # Donwload CMake binaries.
