@@ -12,6 +12,8 @@ endif()
 # Set the default properties.
 set_project_default_properties()
 
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/glew)
+
 ####################################################################################################################
 # "Threads" and "OpenGL" work both on Windows.
 FIND_PACKAGE(Threads REQUIRED)
@@ -168,7 +170,7 @@ target_link_libraries(idlib-game-engine-library ${SDL2_TTF_LIBRARIES})
 target_include_directories(idlib-game-engine-library INTERFACE "${PHYSFS_INCLUDE_DIR}")
 target_link_libraries(idlib-game-engine-library ${PHYSFS_LIBRARY})
 
-target_link_libraries(idlib-game-engine-library idlib-library)
+target_link_libraries(idlib-game-engine-library idlib-library glew)
 
 IF(DOXYGEN_FOUND)
     ADD_CUSTOM_TARGET(idlib-game-engine-library-doc ${DOXYGEN_EXECUTABLE} COMMENT "build Idlib: Game Engine documentation")

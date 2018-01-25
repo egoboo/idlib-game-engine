@@ -35,13 +35,13 @@
 
 #include <SDL_mixer.h>
 
-#include <SDL_opengl.h>
-
 #include <SDL_ttf.h>
 
 #include <SDL_events.h>
 
 #include <physfs.h>
+
+#include <GL/glew.h>
 
 struct sdl_library
 {
