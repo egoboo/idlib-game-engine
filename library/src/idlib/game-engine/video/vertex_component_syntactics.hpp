@@ -28,7 +28,7 @@
 
 #pragma once
 
-namespace id {
+namespace idlib {
 
 /// @brief An enum class of the syntactic forms of vertex components.
 enum class vertex_component_syntactics {
@@ -42,4 +42,4 @@ enum class vertex_component_syntactics {
 	SINGLE_4,
 }; // enum class vertex_component_syntactics
 
-} // namespace id
+} // namespace idlib

@@ -28,7 +28,7 @@
 
 #pragma once
 
-namespace id {
+namespace idlib {
 
 /// @brief Enumeration of canonical identifiers for vertex formats.
 enum class vertex_format {
@@ -82,4 +82,4 @@ enum class vertex_format {
 
 }; // enum class vertex_format	
 
-} // namespace id
+} // namespace idlib

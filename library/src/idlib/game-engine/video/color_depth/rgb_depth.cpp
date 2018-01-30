@@ -28,7 +28,7 @@
 
 #include "idlib/game-engine/video/color_depth/rgb_depth.hpp"
 
-namespace id {
+namespace idlib {
 	
 rgb_depth::rgb_depth(uint8_t r, uint8_t g, uint8_t b) noexcept
 	: m_r(r),
@@ -64,4 +64,4 @@ uint8_t rgb_depth::b() const noexcept
 void rgb_depth::b(uint8_t b) noexcept
 { m_b = b; }
 
-} // namespace Ego
+} // namespace idlib

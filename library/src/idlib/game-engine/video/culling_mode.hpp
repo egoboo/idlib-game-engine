@@ -30,10 +30,10 @@
 
 #include "idlib/game-engine/common.hpp"
 
-namespace id {
+namespace idlib {
 
 /// @brief An enumeration of culling modes.
-/// @remark std::hash is implemented for id::culling_mode.
+/// @remark std::hash is implemented for idlib::culling_mode.
 enum class culling_mode
 {
     /// @brief Neither front-facing nor back-facing polygons are culled.
@@ -50,14 +50,14 @@ enum class culling_mode
 
 }; // enum class culling_mode
 
-} // namespace id
+} // namespace idlib
 
 namespace std {
 	
 template <>
-struct hash<id::culling_mode>
+struct hash<idlib::culling_mode>
 {
-	size_t operator()(id::culling_mode culling_mode) const
+	size_t operator()(idlib::culling_mode culling_mode) const
 	{ return (size_t)culling_mode; }
 }; // hash 
 	

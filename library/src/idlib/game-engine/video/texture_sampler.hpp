@@ -31,7 +31,7 @@
 #include "idlib/game-engine/video/texture_filter.hpp"
 #include "idlib/game-engine/video/texture_address_mode.hpp"
 
-namespace id {
+namespace idlib {
 
 /// @brief A texture sampler is part of the state of a texture (Ego::Texture).
 class texture_sampler
@@ -120,4 +120,4 @@ private:
 
 }; // class texture_sampler
 
-} // namespace ego
+} // namespace idlib

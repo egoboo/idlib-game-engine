@@ -31,7 +31,7 @@
 #include "idlib/game-engine/video/pixel_component_semantics.hpp"
 #include "idlib/idlib.hpp"
 
-namespace id {
+namespace idlib {
 
 /// @brief Given an \f$n\f$-Bit pixel \f$P = C_0 \circ \ldots \circ C_{m-1}\f$ with
 /// components \f$C_0, C_1, \ldots, C_m\f$, the pixel component descriptor denotes
@@ -68,6 +68,7 @@ private:
 
     /// @brief The shift for the component bits.
     uint32_t m_shift;
+
 }; // struct pixel_component_descriptor
 
-} // namespace id
+} // namespace idlib

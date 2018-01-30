@@ -28,7 +28,7 @@
 
 #pragma once
 
-namespace id {
+namespace idlib {
 
 /// @brief An enumeration of texture types.
 enum class texture_type
@@ -43,4 +43,4 @@ enum class texture_type
 
 }; // enum class TextureType
 
-} // namespace Ego
+} // namespace idlib

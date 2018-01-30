@@ -28,7 +28,7 @@
 
 #include "idlib/game-engine/video/index_descriptor.hpp"
 
-namespace id {
+namespace idlib {
 
 index_descriptor::index_descriptor(index_syntactics syntactics)
     : syntactics(syntactics)
@@ -57,4 +57,4 @@ bool index_descriptor::equal_to(const index_descriptor& other) const noexcept
     return syntactics == other.syntactics;
 }
 
-} // namespace id
+} // namespace idlib

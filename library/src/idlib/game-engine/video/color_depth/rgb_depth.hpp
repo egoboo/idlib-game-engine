@@ -32,7 +32,7 @@
 #include "idlib/crtp.hpp"
 #include <cstdint>
 
-namespace id {
+namespace idlib {
 
 /// @brief The depth of an RGB color.
 struct rgb_depth : public equal_to_expr<rgb_depth>
@@ -84,4 +84,4 @@ private:
 	
 }; // struct rgb_depth
 
-} // namespace id
+} // namespace idlib

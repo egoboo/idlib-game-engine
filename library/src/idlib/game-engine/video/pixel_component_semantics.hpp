@@ -28,7 +28,7 @@
 
 #pragma once
 
-namespace id {
+namespace idlib {
 	
 /// @brief An enumeration of the semantics forms of pixel components.
 enum class pixel_component_semantics
@@ -43,4 +43,4 @@ enum class pixel_component_semantics
     ALPHA,
 }; // enum class pixel_component_semantics
 
-} // namespace id
+} // namespace idlib

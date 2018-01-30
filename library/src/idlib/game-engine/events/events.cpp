@@ -27,23 +27,23 @@
 
 #include "idlib/game-engine/events/events.hpp"
 
-template struct id::events::mouse_button_event<id::events::mouse_button_event_kind::clicked>;
-template struct id::events::mouse_button_event<id::events::mouse_button_event_kind::pressed>;
-template struct id::events::mouse_button_event<id::events::mouse_button_event_kind::released>;
+template struct idlib::events::mouse_button_event<idlib::events::mouse_button_event_kind::clicked>;
+template struct idlib::events::mouse_button_event<idlib::events::mouse_button_event_kind::pressed>;
+template struct idlib::events::mouse_button_event<idlib::events::mouse_button_event_kind::released>;
 
-template struct id::events::keyboard_key_event<id::events::keyboard_key_event_kind::typed>;
-template struct id::events::keyboard_key_event<id::events::keyboard_key_event_kind::pressed>;
-template struct id::events::keyboard_key_event<id::events::keyboard_key_event_kind::released>;
+template struct idlib::events::keyboard_key_event<idlib::events::keyboard_key_event_kind::typed>;
+template struct idlib::events::keyboard_key_event<idlib::events::keyboard_key_event_kind::pressed>;
+template struct idlib::events::keyboard_key_event<idlib::events::keyboard_key_event_kind::released>;
 
-template struct id::events::mouse_pointer_event<id::events::mouse_pointer_event_kind::entered>;
-template struct id::events::mouse_pointer_event<id::events::mouse_pointer_event_kind::exited>;
-template struct id::events::mouse_pointer_event<id::events::mouse_pointer_event_kind::moved>;
+template struct idlib::events::mouse_pointer_event<idlib::events::mouse_pointer_event_kind::entered>;
+template struct idlib::events::mouse_pointer_event<idlib::events::mouse_pointer_event_kind::exited>;
+template struct idlib::events::mouse_pointer_event<idlib::events::mouse_pointer_event_kind::moved>;
 
-template struct id::events::mouse_wheel_event<id::events::mouse_wheel_event_kind::turned>;
+template struct idlib::events::mouse_wheel_event<idlib::events::mouse_wheel_event_kind::turned>;
 
-template struct id::events::window_event<id::events::window_event_kind::resized>;
-template struct id::events::window_event<id::events::window_event_kind::shown>;
-template struct id::events::window_event<id::events::window_event_kind::hidden>;
+template struct idlib::events::window_event<idlib::events::window_event_kind::resized>;
+template struct idlib::events::window_event<idlib::events::window_event_kind::shown>;
+template struct idlib::events::window_event<idlib::events::window_event_kind::hidden>;
 
-template struct id::events::keyboard_event<id::events::keyboard_event_kind::input_focus_received>;
-template struct id::events::keyboard_event<id::events::keyboard_event_kind::input_focus_lost>;
+template struct idlib::events::keyboard_event<idlib::events::keyboard_event_kind::input_focus_received>;
+template struct idlib::events::keyboard_event<idlib::events::keyboard_event_kind::input_focus_lost>;

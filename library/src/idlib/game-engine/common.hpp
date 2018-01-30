@@ -33,9 +33,9 @@
 #include "idlib/game-engine/internal/header.in"
 
 /// @brief A single precision floating point 2D point.
-using point_2s = id::point<id::vector<single, 2>>;
+using point_2s = idlib::point<idlib::vector<single, 2>>;
 
 /// @brief A single precision floating point 2D vector.
-using vector_2s = id::vector<single, 2>;
+using vector_2s = idlib::vector<single, 2>;
 	
 #include "idlib/game-engine/internal/footer.in"

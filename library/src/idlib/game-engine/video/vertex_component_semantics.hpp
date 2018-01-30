@@ -28,7 +28,7 @@
 
 #pragma once
 
-namespace id {
+namespace idlib {
 
 /// @brief An enum class of the semantic forms of vertex components.
 enum class vertex_component_semantics {
@@ -44,4 +44,4 @@ enum class vertex_component_semantics {
 	TEXTURE,
 }; // enum class vertex_component_semantics
 
-} // namespace id
+} // namespace idlib

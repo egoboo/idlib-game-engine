@@ -31,7 +31,7 @@
 
 #include "idlib/game-engine/video/color_depth/rgb_depth.hpp"
 
-namespace id {
+namespace idlib {
 
 /// @brief The depth of an RGBA color.
 struct rgba_depth : public equal_to_expr<rgba_depth>
@@ -73,4 +73,4 @@ private:
 	
 }; // struct rgba_color_depth
 
-} // namespace id
+} // namespace idlib

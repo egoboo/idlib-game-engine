@@ -30,7 +30,7 @@
 
 namespace std {
 
-size_t hash<id::primitive_type>::operator()(id::primitive_type primitive_type) const
+size_t hash<idlib::primitive_type>::operator()(idlib::primitive_type primitive_type) const
 { return (size_t)primitive_type; }
 
 } // namespace std

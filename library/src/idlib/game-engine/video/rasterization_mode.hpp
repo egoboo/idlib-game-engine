@@ -28,7 +28,7 @@
 
 #pragma once
 
-namespace id {
+namespace idlib {
 
 /// @brief The rasterization mode controls the interpretation of polygons for rasterization.
 enum class rasterization_mode
@@ -44,4 +44,4 @@ enum class rasterization_mode
 
 }; // enum class rasterization_mode
 
-} // namespace id
+} // namespace idlib

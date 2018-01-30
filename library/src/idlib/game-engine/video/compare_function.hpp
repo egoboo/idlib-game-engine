@@ -28,7 +28,7 @@
 
 #pragma once
 
-namespace id {
+namespace idlib {
 
 /// @brief Compare functions used for the depth/stencil buffer operations and others.
 enum class compare_function
@@ -59,4 +59,4 @@ enum class compare_function
 
 }; // enum class compare_function
 
-} // namespace id
+} // namespace idlib

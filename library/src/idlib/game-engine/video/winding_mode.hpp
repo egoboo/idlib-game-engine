@@ -30,7 +30,7 @@
 
 #include "idlib/game-engine/common.hpp"
 
-namespace id {
+namespace idlib {
 
 /// @brief An enumeration of winding modes.
 /// @remark
@@ -45,7 +45,7 @@ namespace id {
 /// anticlockwise winding in window coordinates, are taken to be front-facing. Certain operations -
 /// in particular but not restricted to culling and tesselation - are influenced by the polygon
 /// winding.
-/// @remark std::hash is implemented for id::winding_mode.
+/// @remark std::hash is implemented for idlib::winding_mode.
 enum class winding_mode
 {
     /// @brief Clockwise polygons are front-facing.
@@ -55,14 +55,14 @@ enum class winding_mode
     anti_clockwise,
 }; // enum class winding_mode
 
-} // namespace id
+} // namespace idlib
 
 namespace std {
 	
 template <>
-struct hash<id::winding_mode>
+struct hash<idlib::winding_mode>
 {
-	size_t operator()(id::winding_mode winding_mode) const;
+	size_t operator()(idlib::winding_mode winding_mode) const;
 }; // hash 
 	
 } // namespace std

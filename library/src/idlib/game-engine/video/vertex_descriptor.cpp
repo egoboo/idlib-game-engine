@@ -28,7 +28,7 @@
 
 #include "idlib/game-engine/video/vertex_descriptor.hpp"
 
-namespace id {
+namespace idlib {
 
 vertex_descriptor::vertex_descriptor(std::initializer_list<vertex_component_descriptor> component_descriptors)
     : m_component_descriptors(component_descriptors), m_size(0)
@@ -46,4 +46,4 @@ bool vertex_descriptor::equal_to(const vertex_descriptor& other) const
     return m_component_descriptors == other.m_component_descriptors;
 }
 
-} // namespace id
+} // namespace idlib

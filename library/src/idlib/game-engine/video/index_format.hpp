@@ -28,7 +28,7 @@
 
 #pragma once
 
-namespace id {
+namespace idlib {
 	
 /// @brief Enumeration of canonical identifiers for index formats.
 enum class index_format {
@@ -42,4 +42,4 @@ enum class index_format {
     IU8,
 }; // enum class index_format
 	
-} // namespace id
+} // namespace idlib

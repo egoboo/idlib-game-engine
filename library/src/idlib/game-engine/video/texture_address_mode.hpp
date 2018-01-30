@@ -28,7 +28,7 @@
 
 #pragma once
 
-namespace id {
+namespace idlib {
 
 /// @brief An enumeration of texture address modes.
 /// Defines what happens when texture coordinates exceed 1.0.
@@ -68,4 +68,4 @@ enum class texture_address_mode
 
 }; // enum class texture_address_mod
 
-} // namespace id
+} // namespace idlib

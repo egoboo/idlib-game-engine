@@ -35,7 +35,7 @@
 #include "idlib/game-engine/events/internal/header.in"
 	
 /// @brief A generic mouse wheel event class.
-/// Specializations for all events defined in id::events::mouse_wheel_event_kind are provided.
+/// Specializations for all events defined in idlib::events::mouse_wheel_event_kind are provided.
 /// @tparam Kind the event kind
 template <mouse_wheel_event_kind Kind>
 struct mouse_wheel_event final : public event

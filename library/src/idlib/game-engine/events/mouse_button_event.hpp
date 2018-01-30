@@ -35,7 +35,7 @@
 #include "idlib/game-engine/events/internal/header.in"
 
 /// @brief A generic mouse button event class.
-/// Specializations for all events defined in id::events::mouse_button_event are provided.
+/// Specializations for all events defined in idlib::events::mouse_button_event are provided.
 /// @tparam Kind the event kind
 template <mouse_button_event_kind Kind>
 struct mouse_button_event final : public event

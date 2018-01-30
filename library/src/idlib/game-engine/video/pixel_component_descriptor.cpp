@@ -28,7 +28,7 @@
 
 #include "idlib/game-engine/video/pixel_component_descriptor.hpp"
 
-namespace id {
+namespace idlib {
 
 pixel_component_descriptor::pixel_component_descriptor(pixel_component_semantics semantics, uint32_t mask, uint32_t shift)
     : m_semantics(semantics), m_mask(mask), m_shift(shift)
@@ -43,4 +43,4 @@ uint32_t pixel_component_descriptor::get_mask() const
 uint32_t pixel_component_descriptor::get_shift() const
 { return m_shift; }
 
-} // namespace id
+} // namespace idlib

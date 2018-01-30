@@ -32,7 +32,7 @@
 #include "idlib/game-engine/video/vertex_component_syntactics.hpp"
 #include "idlib/idlib.hpp"
 
-namespace id {
+namespace idlib {
 
 /// @brief The description of a vertex component.
 class vertex_component_descriptor : public equal_to_expr<vertex_component_descriptor>
@@ -78,10 +78,4 @@ private:
 
 }; // class vertex_component_descriptor
 
-} // namespace id
-
-namespace Ego {
-
-using VertexElementDescriptor = id::vertex_component_descriptor;
-
-} // namespace Ego
+} // namespace idlib

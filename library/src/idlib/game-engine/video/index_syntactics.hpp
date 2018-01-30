@@ -28,7 +28,7 @@
 
 #pragma once
 
-namespace id {
+namespace idlib {
 
 /// @brief An enum class of the syntactic forms of indices.
 enum class index_syntactics {
@@ -40,4 +40,4 @@ enum class index_syntactics {
 	NATURAL_32,
 }; // enum class index_syntactics
 	
-} // namespace id
+} // namespace idlib

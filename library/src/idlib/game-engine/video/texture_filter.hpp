@@ -28,7 +28,7 @@
 
 #pragma once
 
-namespace id {
+namespace idlib {
 
 /// @brief An enumeration of texture filter types.
 enum class texture_filter_type
@@ -70,4 +70,4 @@ enum class texture_filter_method
 
 }; // enum class texture_filter_method
 
-} // namespace id
+} // namespace idlib

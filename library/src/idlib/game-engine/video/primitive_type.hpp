@@ -30,10 +30,10 @@
 
 #include "idlib/game-engine/common.hpp"
 
-namespace id {
+namespace idlib {
 
 /// @brief An enumeration of primitive types.
-/// @remark std::hash is implemented for id::primitive_type.
+/// @remark std::hash is implemented for idlib::primitive_type.
 enum class primitive_type
 {
     /// @brief A vertex \f$i\f$ defines point \f$i\f$.
@@ -78,14 +78,14 @@ enum class primitive_type
 
 }; // enum class primitive_type
 
-} // namespace id
+} // namespace idlib
 
 namespace std {
 	
 template <>
-struct hash<id::primitive_type>
+struct hash<idlib::primitive_type>
 {
-	size_t operator()(id::primitive_type primitive_type) const;
+	size_t operator()(idlib::primitive_type primitive_type) const;
 }; // hash 
 	
 } // namespace std

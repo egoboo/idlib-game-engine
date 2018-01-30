@@ -28,7 +28,7 @@
 
 #include "idlib/game-engine/video/vertex_component_descriptor.hpp"
 
-namespace id {
+namespace idlib {
 
 vertex_component_descriptor::vertex_component_descriptor(size_t offset, vertex_component_syntactics syntactics, vertex_component_semantics semantics)
     : offset(offset), syntactics(syntactics), semantics(semantics)
@@ -73,4 +73,4 @@ size_t vertex_component_descriptor::get_size() const
     }
 }
 
-} // namespace id
+} // namespace idlib

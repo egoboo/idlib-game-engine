@@ -31,7 +31,7 @@
 #include "idlib/game-engine/video/index_syntactics.hpp"
 #include "idlib/idlib.hpp"
 
-namespace id {
+namespace idlib {
 
 /// @brief The descriptor of an index.
 class index_descriptor : public equal_to_expr<index_descriptor>
@@ -58,4 +58,4 @@ private:
 
 }; // class index_descriptor
 
-} // namespace id
+} // namespace idlib

@@ -28,7 +28,7 @@
 
 #include "idlib/game-engine/video/texture_sampler.hpp"
 
-namespace id {
+namespace idlib {
 
 texture_sampler::texture_sampler(texture_filter_method min_filter_method,
                                  texture_filter_method mag_filter_method,
@@ -80,4 +80,4 @@ float texture_sampler::anisotropy_levels() const
 void texture_sampler::anisotropy_levels(float anisotropy_levels)
 { m_anisotropy_levels = anisotropy_levels; }
 
-} // namespace id
+} // namespace idlib

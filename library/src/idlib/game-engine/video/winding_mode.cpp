@@ -30,7 +30,7 @@
 
 namespace std {
 
-size_t hash<id::winding_mode>::operator()(id::winding_mode winding_mode) const
+size_t hash<idlib::winding_mode>::operator()(idlib::winding_mode winding_mode) const
 { return (size_t)winding_mode; }
 
 } // namespace std

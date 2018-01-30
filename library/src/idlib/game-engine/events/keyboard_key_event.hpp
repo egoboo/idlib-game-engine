@@ -35,7 +35,7 @@
 #include "idlib/game-engine/events/internal/header.in"
 
 /// @brief A generic keyboard key event class.
-/// Specializations for all events defined in id::events::keyboard_key_event_kind are provided.
+/// Specializations for all events defined in idlib::events::keyboard_key_event_kind are provided.
 /// @tparam Kind the event kind
 template <keyboard_key_event_kind Kind>
 struct keyboard_key_event final : public event

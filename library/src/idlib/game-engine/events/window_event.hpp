@@ -35,7 +35,7 @@
 #include "idlib/game-engine/events/internal/header.in"
 
 /// @brief A generic window event class.
-/// Specializations for all events defined in id::events::window_event_kind are provided.
+/// Specializations for all events defined in idlib::events::window_event_kind are provided.
 /// @tparam Kind the event kind
 template <window_event_kind Kind>
 struct window_event final : public event

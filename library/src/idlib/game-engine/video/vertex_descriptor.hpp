@@ -30,7 +30,7 @@
 
 #include "idlib/game-engine/video/vertex_component_descriptor.hpp"
 
-namespace id {
+namespace idlib {
 
 /// @brief The descriptor of a vertex.
 class vertex_descriptor : public equal_to_expr<vertex_descriptor>
@@ -84,4 +84,4 @@ public:
 
 }; // class vertex_descriptor
 
-} // namespace id
+} // namespace idlib
