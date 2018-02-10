@@ -12,8 +12,9 @@ file(GLOB temporary ${PROJECT_SOURCE_DIR}/src/*.c)
 message("c sources: ${temporary}")
 list(APPEND sources ${temporary})
 # discover C headers
-file(GLOB temporary ${PROJECT_SOURCE_DIR}/src/*.h)
+file(GLOB temporary ${PROJECT_SOURCE_DIR}/src/GL/*.h)
 message("c headers: ${temporary}")
+set_source_files_properties(${temporary} PROPERTIES HEADER_FILE_ONLY TRUE)
 list(APPEND sources ${temporary})
 
 add_library(glew STATIC ${sources})

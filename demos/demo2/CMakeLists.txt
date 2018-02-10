@@ -4,11 +4,6 @@ cmake_minimum_required(VERSION 3.8)
 # Project name and language.
 project(idlib-game-engine-demo2 CXX)
 
-# Idlib: Game Engine library compiles against C++ 17.
-if (NOT MSVC)
-  set(CMAKE_CXX_STANDARD 17)
-endif()
-
 # Set the default properties.
 set_project_default_properties()
 

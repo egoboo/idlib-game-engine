@@ -4,11 +4,6 @@ cmake_minimum_required(VERSION 3.8)
 # Project name and language.
 project(idlib-game-engine-library CXX)
 
-# Idlib: Game Engine library compiles against C++ 17.
-if (NOT MSVC)
-  set(CMAKE_CXX_STANDARD 17)
-endif()
-
 # Set the default properties.
 set_project_default_properties()
 
@@ -129,13 +124,15 @@ endif()
 download_and_unpack("https://icculus.org/physfs/downloads/physfs-3.0.0.tar.bz2"
 					"${PROJECT_SOURCE_DIR}/physfs-3.0.0.tar.bz2"
 					"${PROJECT_SOURCE_DIR}")
-# Build as static library.
-set(PHYSFS_BUILD_STATIC ON CACHE BOOL "" FORCE)
+# Build static library.
+set(PHYSFS_BUILD_STATIC TRUE)
+# Do not build shared library.
+set(PHYSFS_BUILD_SHARED FALSE)
 # Do not build tests.
-set(PHYSFS_BUILD_TEST OFF CACHE BOOL "" FORCE)
-add_subdirectory(${PROJECT_SOURCE_DIR}/physfs-3.0.0)
-# Store paths and library.
-set(PHYSFS_LIBRARY physfs)
+set(PHYSFS_BUILD_TEST FALSE)
+add_subdirectory(${PROJECT_SOURCE_DIR}/physfs-3.0.0 EXCLUDE_FROM_ALL)
+# Store header location and library target.
+set(PHYSFS_LIBRARIES physfs-static)
 set(PHYSFS_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/physfs-3.0.0/src)
 
 # Include directory locations.
@@ -156,7 +153,7 @@ target_include_directories(idlib-game-engine-library PRIVATE "${PROJECT_SOURCE_D
 target_include_directories(idlib-game-engine-library INTERFACE "${PROJECT_SOURCE_DIR}/src")
 
 target_include_directories(idlib-game-engine-library INTERFACE "${SDL2_INCLUDE_DIRS}")
-target_link_libraries(idlib-game-engine-library ${SDL2_LIBRARIES})
+target_link_libraries(idlib-game-engine-library ${SDL2_LIBRARIES} ${PHYSFS_LIBRARIES})
 
 target_include_directories(idlib-game-engine-library INTERFACE "${SDL2_IMAGE_INCLUDE_DIRS}")
 target_link_libraries(idlib-game-engine-library ${SDL2_IMAGE_LIBRARIES})
@@ -171,6 +168,13 @@ target_include_directories(idlib-game-engine-library INTERFACE "${PHYSFS_INCLUDE
 target_link_libraries(idlib-game-engine-library ${PHYSFS_LIBRARY})
 
 target_link_libraries(idlib-game-engine-library idlib-library glew)
+
+# Link to libraries required by PhysFS on OS X.
+if (APPLE)
+    target_link_libraries(idlib-game-engine-library "-framework IOKit")
+	target_link_libraries(idlib-game-engine-library "-framework Foundation")
+endif()
+
 
 IF(DOXYGEN_FOUND)
     ADD_CUSTOM_TARGET(idlib-game-engine-library-doc ${DOXYGEN_EXECUTABLE} COMMENT "build Idlib: Game Engine documentation")

@@ -41,6 +41,7 @@
 
 #include <physfs.h>
 
+#define GLEW_STATIC
 #include <GL/glew.h>
 
 struct sdl_library

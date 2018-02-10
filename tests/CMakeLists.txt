@@ -2,11 +2,6 @@ cmake_minimum_required (VERSION 3.8)
 
 project(idlib-game-engine-tests CXX)
 
-# Idlib: Game Engine tests compiles against C++ 17.
-if (NOT MSVC)
-  set(CMAKE_CXX_STANDARD 17)
-endif()
-
 # Set the default properties.
 set_project_default_properties()
 
