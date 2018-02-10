@@ -55,3 +55,4 @@
 #include "idlib/game-engine/video/vertex_descriptor.hpp"
 #include "idlib/game-engine/video/vertex_format.hpp"
 #include "idlib/game-engine/video/winding_mode.hpp"
+#include "idlib/game-engine/video/window.hpp"
