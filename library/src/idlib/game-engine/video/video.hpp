@@ -29,6 +29,7 @@
 
 #include "idlib/game-engine/video/buffer.hpp"
 #include "idlib/game-engine/video/buffer_scoped_lock.hpp"
+#include "idlib/game-engine/video/video_buffer_manager.hpp"
 #include "idlib/game-engine/video/compare_function.hpp"
 #include "idlib/game-engine/video/color_blend/color_blend_equation.hpp"
 #include "idlib/game-engine/video/color_blend/color_blend_parameter.hpp"
