@@ -1,19 +1,13 @@
+# Minimum required CMake version.
 cmake_minimum_required (VERSION 3.8)
-
+# Project name and settings.
 project(idlib-game-engine-tests CXX)
-
-# Set the default properties.
+message("building Idlib: Game Engine Tests Executable")
 set_project_default_properties()
 
-# Add gtest library include.
-# TODO: This ensures that "googletest" is compiled against C++ 17.
-#       However, isn't it possible to simply use set(CMAKE_CXX_STANDARD 17)?
-if (CMAKE_CXX_COMPILER MATCHES ".*clang")
-  set(CMAKE_CXX_FLAGS "-DGTEST_LANG_CXX11=1 -std=gnu++11")
-else()
-  set(CMAKE_CXX_FLAGS "-DGTEST_LANG_CXX11=1")
-endif()
-include_directories("${CMAKE_BINARY_DIR}/external/googletest/googletest/include")
+# Add include directory of Google Test.
+include_directories("${IDLIB_PATH}/external/googletest/googletest/include")
+
 # Include directory locations.
 include_directories(${PROJECT_SOURCE_DIR}/../library/src)
 include_directories(${PROJECT_SOURCE_DIR})

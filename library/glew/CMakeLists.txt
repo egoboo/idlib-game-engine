@@ -1,19 +1,21 @@
+# Minimum required CMake version.
+cmake_minimum_required (VERSION 3.8)
+# Project name and settings.
 project(glew C)
-
-# Set the default properties.
+message("building GLEW Library")
 set_project_default_properties()
 
 set(sources "")
 
-message("project source dir: ${PROJECT_SOURCE_DIR}")
+#message("project source dir: ${PROJECT_SOURCE_DIR}")
 
 # discover C sources
 file(GLOB temporary ${PROJECT_SOURCE_DIR}/src/*.c)
-message("c sources: ${temporary}")
+#message("c sources: ${temporary}")
 list(APPEND sources ${temporary})
 # discover C headers
 file(GLOB temporary ${PROJECT_SOURCE_DIR}/src/GL/*.h)
-message("c headers: ${temporary}")
+#message("c headers: ${temporary}")
 set_source_files_properties(${temporary} PROPERTIES HEADER_FILE_ONLY TRUE)
 list(APPEND sources ${temporary})
 

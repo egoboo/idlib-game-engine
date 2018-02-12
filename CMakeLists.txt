@@ -1,8 +1,8 @@
 # Minimum required CMake version.
 cmake_minimum_required(VERSION 3.6)
-
-# Project name and language.
+# Project name and settings.
 project(idlib-game-engine CXX)
+message("building Idlib: Game Engine")
 
 # Enable/disable compilation and execution of unit tests.
 # The value of this option can be set from the command-line by -Didlib-game-engine-with-tests=(ON|OFF).
@@ -30,11 +30,13 @@ if (NOT DEFINED IDLIB_PATH)
  execute_process(COMMAND git checkout origin/develop WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/idlib)
  set(IDLIB_PATH ${CMAKE_CURRENT_SOURCE_DIR}/idlib)
  add_subdirectory(${IDLIB_PATH})
- message("absolute path to Idlib is ${IDLIB_PATH}")
+ #message("absolute path to Idlib is ${IDLIB_PATH}")
 endif ()
 
 include(${IDLIB_PATH}/buildsystem/set_project_default_properties.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/buildsystem/download_and_unpack.cmake)
+
+#include_google_test()
 
 # Add subdirectories for the library, the tests, and the demos.
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/library)
