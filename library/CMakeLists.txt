@@ -169,7 +169,9 @@ target_link_libraries(idlib-game-engine-library ${SDL2_TTF_LIBRARIES})
 target_include_directories(idlib-game-engine-library INTERFACE "${PHYSFS_INCLUDE_DIR}")
 target_link_libraries(idlib-game-engine-library ${PHYSFS_LIBRARY})
 
-target_link_libraries(idlib-game-engine-library idlib-library glew)
+target_link_libraries(idlib-game-engine-library glew)
+
+target_link_libraries(idlib-game-engine-library idlib-filesystem-library idlib-library)
 
 target_link_libraries(idlib-game-engine-library Threads::Threads)
 
