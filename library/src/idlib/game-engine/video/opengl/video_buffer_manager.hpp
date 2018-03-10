@@ -2,8 +2,8 @@
 
 #include "idlib/game-engine/video/video_buffer_manager.hpp"
 
-namespace idlib { namespace opengl {
-	
+namespace idlib::opengl {
+
 class video_buffer_manager : public idlib::video_buffer_manager
 {
 public:
@@ -21,5 +21,5 @@ public:
 	std::shared_ptr<idlib::vertex_buffer> create_vertex_buffer(size_t number_of_vertices, size_t vertex_size) override;
 
 }; // class video_buffer_manager
-	
-} } // namespace idlib::opengl
+
+} // namespace idlib::opengl

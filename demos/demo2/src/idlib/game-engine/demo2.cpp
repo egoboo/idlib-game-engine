@@ -26,7 +26,7 @@
 #include <string>
 #include <iostream>
 
-#include "idlib/game-engine.hpp"
+#include "idlib/game_engine.hpp"
 
 #include <SDL.h>
 #undef main

@@ -29,6 +29,7 @@
 #pragma once
 
 #include "idlib/game-engine/events/events.hpp"
+#include "idlib/signal.hpp"
 
 namespace idlib {
 

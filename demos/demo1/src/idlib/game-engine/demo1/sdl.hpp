@@ -26,7 +26,7 @@
 
 #include <string>
 
-#include "idlib/game-engine.hpp"
+#include "idlib/game_engine.hpp"
 
 template <typename T>
 struct new_functor

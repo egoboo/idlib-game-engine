@@ -22,31 +22,29 @@
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "idlib/game-engine/demo1/sdl.hpp"
-#include <cstdlib>
-#include <iostream>
+#pragma once
 
-int main(int argc, char **argv)
-{
-    try
-    {
-        sdl_library::initialize();
-        sdl_image_library::initialize();
-        sdl_ttf_library::initialize();
-        sdl_mixer_library::initialize();
-        physfs_library::initialize(std::string(argv[0]));
-    }
-    catch (std::runtime_error& ex)
-    {
-        std::cerr << ex.what();
-    }
-    catch (...)
-    {
-    }
-    physfs_library::uninitialize();
-    sdl_mixer_library::uninitialize();
-    sdl_ttf_library::uninitialize();
-    sdl_image_library::uninitialize();
-    sdl_library::uninitialize();
-    return EXIT_SUCCESS;
-}
+#include "idlib/game-engine/common.hpp"
+
+namespace idlib {
+
+template <typename T>
+struct blit_functor;
+
+template <typename T>
+void blit(T *source_pixels, T *target_pixels)
+{ blit_functor<T>()(source_pixels, target_pixels); }
+
+template <typename T>
+void blit(T *source_pixels, const rectangle_2s& source_rectangle, T *target_pixels)
+{ blit_functor<T>()(source_pixels, source_rectangle, target_pixels); }
+
+template <typename T>
+void blit(T *source_pixels, T *target_pixels, const point_2s& target_point)
+{ blit_functor<T>()(source_pixels, target_pixels, target_point); }
+
+template <typename T>
+void blit(T *source_pixels, const rectangle_2s& source_rectangle, T *target_pixels, const point_2s& target_point)
+{ blit_functor<T>()(source_pixels, source_rectangle, target_pixels, target_point); }
+
+} // namespace idlib

@@ -22,31 +22,44 @@
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "idlib/game-engine/demo1/sdl.hpp"
-#include <cstdlib>
-#include <iostream>
+#pragma once
 
-int main(int argc, char **argv)
-{
-    try
-    {
-        sdl_library::initialize();
-        sdl_image_library::initialize();
-        sdl_ttf_library::initialize();
-        sdl_mixer_library::initialize();
-        physfs_library::initialize(std::string(argv[0]));
-    }
-    catch (std::runtime_error& ex)
-    {
-        std::cerr << ex.what();
-    }
-    catch (...)
-    {
-    }
-    physfs_library::uninitialize();
-    sdl_mixer_library::uninitialize();
-    sdl_ttf_library::uninitialize();
-    sdl_image_library::uninitialize();
-    sdl_library::uninitialize();
-    return EXIT_SUCCESS;
-}
+#include "idlib/game-engine/common.hpp"
+
+namespace idlib {
+
+template <typename T>
+struct fill_functor;
+
+/// @{
+/// @brief Fill pixels with colors.
+/// @param pixels a pointer to the pixels
+/// @param color the fill color
+
+template <typename T>
+void fill(T *pixels, const color_3b& color)
+{ fill_functor<T>()(pixels, color); }
+
+template <typename T>
+void fill(T *pixels, const color_4b& color)
+{ fill_functor<T>()(pixels, color); }
+
+/// @}
+
+/// @{
+/// @brief Fill pixels with colors.
+/// @param pixels a pointer to the pixels
+/// @param color the fill color
+/// @param rectangle the rectangle of the pixels to fill. The specified rectangle is clipped against the rectangle of the pixels.
+
+template <typename T>
+void fill(T *pixels, const color_3b& color, const rectangle_2s& rectangle)
+{ fill_functor<T>()(pixels, color, rectangle); }
+
+template <typename T>
+void fill(T *pixels, const color_4b& color, const idlib::rectangle_2s& rectangle)
+{ fill_functor<T>()(pixels, color, rectangle); }
+
+/// @}
+
+} // namespace idlib

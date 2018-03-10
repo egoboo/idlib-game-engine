@@ -22,31 +22,29 @@
 //
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include "idlib/game-engine/demo1/sdl.hpp"
-#include <cstdlib>
-#include <iostream>
+#pragma once
 
-int main(int argc, char **argv)
-{
-    try
-    {
-        sdl_library::initialize();
-        sdl_image_library::initialize();
-        sdl_ttf_library::initialize();
-        sdl_mixer_library::initialize();
-        physfs_library::initialize(std::string(argv[0]));
-    }
-    catch (std::runtime_error& ex)
-    {
-        std::cerr << ex.what();
-    }
-    catch (...)
-    {
-    }
-    physfs_library::uninitialize();
-    sdl_mixer_library::uninitialize();
-    sdl_ttf_library::uninitialize();
-    sdl_image_library::uninitialize();
-    sdl_library::uninitialize();
-    return EXIT_SUCCESS;
-}
+#include "idlib/game-engine/common.hpp"
+
+namespace idlib {
+
+template <typename T>
+struct set_pixel_functor;
+
+/// @{
+/// @brief Set the color of a pixel.
+/// @param pixels a pointer to the pixels
+/// @param point the point where the pixel is located. Clipped against the rectangle of the image.
+/// @param color the color to fill the pixel with
+
+template <typename T>
+void set_pixel(T *pixels, const color_3b& color, const point_2s& point)
+{ set_pixel_functor<T>()(pixels, color, point); }
+
+template <typename T>
+void set_pixel(T *pixels, const color_4b& color, const point_2s& point)
+{ set_pixel_functor<T>()(pixels, color, point); }
+
+/// @}
+
+} // namespace idlib

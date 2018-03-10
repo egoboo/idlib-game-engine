@@ -17,11 +17,11 @@
 
 #include "gtest/gtest.h"
 
-namespace idlib { namespace tests { namespace compilation {
+namespace idlib::tests {
 
 TEST(compilation_testing, test_compilation)
 {
     ASSERT_EQ(1, 1);
 }
 
-} } } // namespace idlib::tests::compilation
+} // namespace idlib::tests

@@ -29,7 +29,7 @@
 #pragma once
 
 namespace idlib {
-	
+
 /// @brief Enumeration of canonical identifiers for a pixel formats.
 enum class pixel_format
 {
@@ -126,5 +126,5 @@ enum class pixel_format
     A8R8G8B8,
 
 }; // enum class pixel_format
-	
+
 } // namespace idlib
