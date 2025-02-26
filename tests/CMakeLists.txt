@@ -5,9 +5,6 @@ project(idlib-game-engine-tests CXX)
 message("building Idlib: Game Engine Tests Executable")
 set_project_default_properties()
 
-# Add include directory of Google Test.
-include_directories("${IDLIB_PATH}/external/googletest/googletest/include")
-
 # Include directory locations.
 include_directories(${PROJECT_SOURCE_DIR}/../library/src)
 include_directories(${PROJECT_SOURCE_DIR})
@@ -17,7 +14,7 @@ file(GLOB_RECURSE test_files ${PROJECT_SOURCE_DIR}/idlib/tests/*.cpp)
 
 add_executable(idlib-game-engine-tests-executable ${test_files})
 target_link_libraries(idlib-game-engine-tests-executable idlib-library idlib-library)
-target_link_libraries(idlib-game-engine-tests-executable gtest gtest_main)
+target_link_libraries(idlib-game-engine-tests-executable GTest::gtest_main)
 
 include(CTest)
 enable_testing()
